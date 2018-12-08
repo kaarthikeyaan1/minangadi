@@ -1,10 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Minangadi - Coming Soon !!
-  </h1>
-</div>
-<h2>Here are some links to help you start: </h2>
-
-
+<body>
+	<div style="text-align:center">
+	  <h1 class = "header">
+		Welcome to {{ title }}!
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	  </h1>
+	  <div class="NavBar">
+		<nav>
+			<ul style="list-style-type:none">
+				<li><a href="#" class="home" ng-click="">Home</a></li>
+			
+				<li><a href="#" class="about" ng-click="">About</a></li>
+				<li><a href="#" class="Login" ng-click="">Login</a></li>
+				<li><a href="#" class="SignUp" ng-click="">SignUp</a></li>
+			</ul>			
+		</nav>
+		</div>
+	</div>
+</body>
+<app-home></app-home>
 <router-outlet></router-outlet>
