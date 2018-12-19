@@ -1,0 +1,25 @@
+.product-card {
+    max-width: 250px;
+  }
+
+  .product-header-image {
+    background-image: url('/assets/logo/ms-icon-150x150.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
+.product-info{
+  text-align: center;
+  }
+  .product-image{
+    width: 100%;
+    height: 90%;
+  }
+  mat-grid-tile{
+  flex-direction: column;
+}
+.product-tile{
+  display: flex;
+  flex-direction: column;
+}
