@@ -1,0 +1,29 @@
+<mat-toolbar [style.visibility]= "getVisibility()">
+  <div class="icon-container">
+      <div>
+          <a routerLink="/">
+                <mat-icon routerLinkActive="mat-icon-active" class="mat-icon-active">home</mat-icon>
+          </a>
+      </div>
+      <div >
+          <a  routerLink="/category">
+                <mat-icon >category</mat-icon>
+          </a>
+      </div>
+      <div>
+          <a routerLink="/favourites">
+                <mat-icon routerLinkActive="mat-icon-active">favorite</mat-icon>
+          </a>
+      </div>
+      <div>
+            <a routerLink="/cart">
+                <mat-icon>shopping_cart</mat-icon>
+            </a>
+      </div>
+      <div>
+            <a routerLink="/profile">
+                <mat-icon>account_circle</mat-icon>
+            </a>
+    </div>
+  </div>  
+</mat-toolbar>

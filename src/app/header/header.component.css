@@ -1,0 +1,7 @@
+mat-toolbar{
+    position: fixed;
+    top: 0px;
+    background-color:#585f6d;
+    width: 100%;
+    z-index: 1;
+  }

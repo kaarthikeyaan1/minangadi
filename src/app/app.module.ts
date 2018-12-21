@@ -21,6 +21,16 @@ import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HeaderComponent } from './header/header.component';
+import{ ToolbarVisibilityDirective } from './toolbar/toolbar.directive';
+import {DataService} from './data.service';
+import { from } from 'rxjs';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { CartComponent } from './cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +39,12 @@ import { HeaderComponent } from './header/header.component';
     SearchComponent,
     ProductComponent,
     ToolbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ToolbarVisibilityDirective,
+    FavouritesComponent,
+    CartComponent,
+    ProfileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +61,36 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:ProductComponent
+      },
+      {
+        path:'search',
+        component:SearchComponent
+      },
+      {
+        path:'favourites',
+        component:FavouritesComponent
+      },
+      {
+        path:'cart',
+        component:CartComponent
+      },
+      {
+        path:'profile',
+        component:ProfileComponent
+      },
+      {
+        path:'**',
+        component:NotFoundComponent
+      }
+    ]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

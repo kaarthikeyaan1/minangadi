@@ -1,0 +1,6 @@
+.full-width {
+    width: 50%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+  }
