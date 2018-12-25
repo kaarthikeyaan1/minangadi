@@ -1,6 +1,10 @@
 .full-width {
-    width: 50%;
-    position: fixed;
-    top: 0px;
-    z-index: 1;
+    width: 100%;
+    z-index: 2;
   }
+  .spacer{
+    flex: 1 1 auto;
+  }
+  .backButton{
+   color: #585f6d;
+ }

@@ -31,7 +31,9 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { CategoryComponent } from './category/category.component';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CartComponent,
     ProfileComponent,
     NotFoundComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,14 +65,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReactiveFormsModule,
     MatGridListModule,
     MatCardModule,
+    MatTreeModule,
+    MatExpansionModule,
     RouterModule.forRoot([
       {
-        path:'',
-        component:ProductComponent
-      },
-      {
-        path:'search',
-        component:SearchComponent
+        path:'category',
+        component:CategoryComponent
       },
       {
         path:'favourites',
@@ -84,10 +85,18 @@ import { NotFoundComponent } from './not-found/not-found.component';
         component:ProfileComponent
       },
       {
+        path:'search',
+        component:SearchComponent
+      },
+      {
+        path:'',
+        component:ProductComponent
+      },
+      {
         path:'**',
         component:NotFoundComponent
       }
-    ]),
+    ])  ,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [DataService],

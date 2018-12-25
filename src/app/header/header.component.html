@@ -1,3 +1,13 @@
-<mat-toolbar>
-  
+<mat-toolbar [className]="bshowHeader ? 'showHeader' : 'hideHeader'">
+        <mat-toolbar-row>
+         <span>
+             <a routerLink="">
+                 <img src="/assets/logo/logo_transparent.png" class="header-logo">
+            </a>
+        </span>
+         <span class="spacer"></span>
+         <a routerLink="/search">
+            <mat-icon class="search" (click)="hideHeader()">search</mat-icon>
+        </a>
+        </mat-toolbar-row>
 </mat-toolbar>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  message:string;
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.changeMessage("ShowHeader");
   }
 
 }
